@@ -1,26 +1,29 @@
 export class Text {
-    private content: string;
+    private content: string[];
 
     constructor(content: string) {
-        this.content = content;
+        this.content = content.split('\n');
     }
 
     hasHeader(): boolean {
         const regex = /Observations|Location|\d\s\w{3}\s\d{4}/gm;
-        const match = regex.exec(this.getContent());
+        let match = false;
 
-        if (match)
-            return true;
+        for (const line of this.getContent()) {
+            match = regex.test(line);
+
+            if (match)
+                return true;
+        }
 
         return false;
-        
     }
 
     getContent() {
         return this.content;
     }
 
-    setContent(content: string) {
+    setContent(content: string[]) {
         this.content = content;
     }
 }
