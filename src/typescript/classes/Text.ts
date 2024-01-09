@@ -19,6 +19,20 @@ export class Text {
         return false;
     }
 
+    private findFirstNonHeaderLine(): number {
+        let index = -1;
+
+        index = this.getContent().findIndex((element) => {
+            return element.includes("STN");
+        })
+
+        return index;
+    }
+
+    removeHeader(): void {
+        this.setContent(this.getContent().slice(this.findFirstNonHeaderLine()))
+    }
+
     getContent() {
         return this.content;
     }

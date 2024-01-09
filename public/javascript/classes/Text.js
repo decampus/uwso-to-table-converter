@@ -12,6 +12,16 @@ export class Text {
         }
         return false;
     }
+    findFirstNonHeaderLine() {
+        let index = -1;
+        index = this.getContent().findIndex((element) => {
+            return element.includes("STN");
+        });
+        return index;
+    }
+    removeHeader() {
+        this.setContent(this.getContent().slice(this.findFirstNonHeaderLine()));
+    }
     getContent() {
         return this.content;
     }

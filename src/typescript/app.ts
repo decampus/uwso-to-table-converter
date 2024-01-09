@@ -8,6 +8,10 @@ convert.addEventListener('click', convertToTable);
 
 function convertToTable() {
     if (textarea.value.length) {
-        const text = new Text(textarea.value);        
+        const text = new Text(textarea.value);
+        
+        if (text.hasHeader()) {
+            text.removeHeader();
+        }
     }
 }
