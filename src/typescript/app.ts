@@ -13,5 +13,9 @@ function convertToTable() {
         if (text.hasHeader()) {
             text.removeHeader();
         }
+
+        if (text.hasEqualSignLine()) {
+            text.removeEqualSignLine();
+        }
     }
 }

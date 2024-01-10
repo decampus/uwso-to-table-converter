@@ -22,6 +22,26 @@ export class Text {
     removeHeader() {
         this.setContent(this.getContent().slice(this.findFirstNonHeaderLine()));
     }
+    hasEqualSignLine() {
+        const regex = /=+/gm;
+        let result = false;
+        for (let line of this.getContent()) {
+            result = regex.test(line);
+            if (result)
+                return true;
+        }
+        return result;
+    }
+    findIndexOfEqualSignLine() {
+        let index = -1;
+        index = this.getContent().findIndex((element) => {
+            return element.includes("=");
+        });
+        return index;
+    }
+    removeEqualSignLine() {
+        this.getContent().splice(this.findIndexOfEqualSignLine(), 1);
+    }
     getContent() {
         return this.content;
     }
