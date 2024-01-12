@@ -1,10 +1,13 @@
+import { Document } from "./classes/Document";
 import { Text } from "./classes/Text";
 
 export class Controller {
     private text: Text[];
+    private doc: Document[];
 
     constructor() {
         this.text = new Array<Text>();
+        this.doc = new Array<Document>();
     }
 
     getContent(): Text[] {
@@ -13,5 +16,9 @@ export class Controller {
 
     insertText(text: Text): void {
         this.text.push(text);
+    }
+
+    removeText(): void {
+        this.text.pop();
     }
 }
