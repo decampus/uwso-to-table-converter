@@ -10,4 +10,8 @@ export class Controller {
     getContent(): Text[] {
         return this.text;
     }
+
+    insertText(text: Text): void {
+        this.text.push(text);
+    }
 }
