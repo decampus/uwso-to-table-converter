@@ -12,6 +12,9 @@ export class Controller {
     removeText() {
         this.text.pop();
     }
+    insertDocument(doc) {
+        this.doc.push(doc);
+    }
     downloadFile() {
         this.doc[0].downloadFile();
     }

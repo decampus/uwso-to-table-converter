@@ -21,4 +21,12 @@ export class Controller {
     removeText(): void {
         this.text.pop();
     }
+
+    insertDocument(doc: Document) {
+        this.doc.push(doc);
+    }
+
+    removeDocument(): void {
+        this.doc.pop();
+    }
 }
