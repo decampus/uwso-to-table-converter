@@ -10,16 +10,16 @@ export class Controller {
         this.doc = new Array<Document>();
     }
 
-    getContent(): Text[] {
-        return this.text;
-    }
-
     insertText(text: Text): void {
         this.text.push(text);
     }
 
     removeText(): void {
         this.text.pop();
+    }
+
+    getText(): Text[] {
+        return this.text;
     }
 
     insertDocument(doc: Document) {

@@ -3,20 +3,20 @@ export class Controller {
         this.text = new Array();
         this.doc = new Array();
     }
-    getContent() {
-        return this.text;
-    }
     insertText(text) {
         this.text.push(text);
     }
     removeText() {
         this.text.pop();
     }
+    getText() {
+        return this.text;
+    }
     insertDocument(doc) {
         this.doc.push(doc);
     }
-    downloadFile() {
-        this.doc[0].downloadFile();
+    removeDocument() {
+        this.doc.pop();
     }
 }
 //# sourceMappingURL=Controller.js.map
