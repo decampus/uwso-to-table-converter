@@ -30,6 +30,10 @@ export class Controller {
         this.doc.pop();
     }
 
+    getDocument(): Document[] {
+        return this.doc;
+    }
+
     downloadFile(): void {
         this.doc[0].downloadFile();
     }

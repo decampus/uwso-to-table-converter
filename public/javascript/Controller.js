@@ -18,6 +18,9 @@ export class Controller {
     removeDocument() {
         this.doc.pop();
     }
+    getDocument() {
+        return this.doc;
+    }
     downloadFile() {
         this.doc[0].downloadFile();
     }
