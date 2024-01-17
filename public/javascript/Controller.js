@@ -18,5 +18,8 @@ export class Controller {
     removeDocument() {
         this.doc.pop();
     }
+    downloadFile() {
+        this.doc[0].downloadFile();
+    }
 }
 //# sourceMappingURL=Controller.js.map

@@ -29,4 +29,8 @@ export class Controller {
     removeDocument(): void {
         this.doc.pop();
     }
+
+    downloadFile(): void {
+        this.doc[0].downloadFile();
+    }
 }
