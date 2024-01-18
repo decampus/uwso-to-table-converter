@@ -11,10 +11,14 @@ export class Controller {
     }
 
     insertText(text: Text): void {
+        while (this.text.length) {
+            this.removeText();
+        }
+
         this.text.push(text);
     }
 
-    removeText(): void {
+    private removeText(): void {
         this.text.pop();
     }
 
@@ -23,10 +27,14 @@ export class Controller {
     }
 
     insertDocument(doc: Document) {
+        while (this.doc.length) {
+            this.removeDocument();
+        }
+
         this.doc.push(doc);
     }
 
-    removeDocument(): void {
+    private removeDocument(): void {
         this.doc.pop();
     }
 

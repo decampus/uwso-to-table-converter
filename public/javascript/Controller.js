@@ -4,6 +4,9 @@ export class Controller {
         this.doc = new Array();
     }
     insertText(text) {
+        while (this.text.length) {
+            this.removeText();
+        }
         this.text.push(text);
     }
     removeText() {
@@ -13,6 +16,9 @@ export class Controller {
         return this.text;
     }
     insertDocument(doc) {
+        while (this.doc.length) {
+            this.removeDocument();
+        }
         this.doc.push(doc);
     }
     removeDocument() {
