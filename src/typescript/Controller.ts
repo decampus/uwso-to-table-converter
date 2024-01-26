@@ -43,6 +43,9 @@ export class Controller {
     }
 
     downloadFile(): void {
-        this.doc[0].downloadFile();
+        if (this.text.length)
+            this.doc[0].downloadFile();
+        else
+            console.error('Nothing to download');
     }
 }
