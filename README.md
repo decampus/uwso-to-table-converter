@@ -4,7 +4,7 @@ The UWSO to Table Converter is a straightforward application that converts data 
 
 ![Screenshot of the UWSP to Table Converter page](/assets/uwso-to-table-converter.png)
 
-The web page can be accessed on: [UWSO to Table Converter](decampus.github.io/uwso-to-table-converter).
+The web page can be accessed on: [UWSO to Table Converter](https://decampus.github.io/uwso-to-table-converter/).
 
 ## The project
 
