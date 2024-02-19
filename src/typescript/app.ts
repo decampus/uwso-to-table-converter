@@ -9,6 +9,7 @@ const download = document.getElementById('download-button') as HTMLButtonElement
 const textarea = document.getElementById('textarea') as HTMLTextAreaElement;
 
 const downloadSection = document.getElementById('download-section') as HTMLDivElement;
+const inputControls = document.getElementById('input-controls') as HTMLDivElement;
 
 convert.addEventListener('click', convertToTable);
 clear.addEventListener('click', clearTextarea);
@@ -31,6 +32,8 @@ function convertToTable() {
         controller.insertText(text);
 
         showDownloadSection();
+    } else {
+        triggerEmptyTextareaWarning();
     }
 }
 
@@ -54,4 +57,24 @@ function showDownloadSection() {
 function hideDownloadSection() {
     if (downloadSection.style.display === "block")
         downloadSection.style.display = "none";
+}
+
+function triggerEmptyTextareaWarning() {
+    let div = document.createElement('div');
+    let p = document.createElement('p');
+    let text = document.createTextNode('Nothing to convert');
+
+    p.appendChild(text);
+    p.setAttribute('class', 'text-danger m-0');
+
+    div.appendChild(p);
+    div.setAttribute('id', 'empty-textarea-warning');
+    div.setAttribute('class', 'mt-3 ps-1')
+    div.setAttribute('display', 'flex');
+    
+    inputControls.appendChild(div);
+
+    setTimeout(() => {
+        inputControls.removeChild(<HTMLDivElement>document.getElementById('empty-textarea-warning'))
+    }, 1500);
 }
